@@ -18,9 +18,6 @@ jobs:
               run: |
                   marimo export html-wasm app.py -o static --mode run
             
-            - name: 🗂️ Copy public assets
-              run: cp -r public static/public
-
             - name: 📦 Upload Pages Artifact
               uses: actions/upload-pages-artifact@v3
               with:
