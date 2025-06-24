@@ -115,33 +115,33 @@ def _(mo):
 
     draw()
 
-@app.cell
-def _(mo):
+# @app.cell
+# def _(mo):
 
-    # Load the penguins dataset
-    #fp = str(mo.notebook_location() / "public" / "penguins.csv")
+#     # Load the penguins dataset
+#     #fp = str(mo.notebook_location() / "public" / "penguins.csv")
 
-    fp3 = os.path.join( "public" , "penguins.csv")
-    df3 = pd.read_csv(fp3, compression =  None)
+#     fp3 = os.path.join( "public" , "penguins.csv")
+#     df3 = pd.read_csv(fp3, compression =  None)
 
-    # Drop rows with missing values for the relevant columns
-    plot_df3 = df3.dropna(subset=["flipper_length_mm", "body_mass_g", "species"])
+#     # Drop rows with missing values for the relevant columns
+#     plot_df3 = df3.dropna(subset=["flipper_length_mm", "body_mass_g", "species"])
 
-    def draw3():
-        fig, ax = plt.subplots()
-        species = plot_df3["species"].unique()
-        for sp in species:
-            sp_df = plot_df3[plot_df3["species"] == sp]
-            ax.scatter(
-                sp_df["flipper_length_mm"],
-                sp_df["body_mass_g"],
-                alpha=0.7,
-                label=sp
-            )
-        ax.set_xlabel("Flipper Length (mm)")
-        ax.set_ylabel("Body Mass (g)")
-        ax.set_title("Body Mass vs Flipper Length (mm) by Species")
-        ax.legend(title="Species")
-        return fig
+#     def draw3():
+#         fig, ax = plt.subplots()
+#         species = plot_df3["species"].unique()
+#         for sp in species:
+#             sp_df = plot_df3[plot_df3["species"] == sp]
+#             ax.scatter(
+#                 sp_df["flipper_length_mm"],
+#                 sp_df["body_mass_g"],
+#                 alpha=0.7,
+#                 label=sp
+#             )
+#         ax.set_xlabel("Flipper Length (mm)")
+#         ax.set_ylabel("Body Mass (g)")
+#         ax.set_title("Body Mass vs Flipper Length (mm) by Species")
+#         ax.legend(title="Species")
+#         return fig
 
-    draw3()
+#     draw3()
