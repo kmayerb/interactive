@@ -84,7 +84,7 @@ def _(mo):
 
     # Load the penguins dataset
     fp = str(mo.notebook_location() / "public" / "penguins.csv")
-    df = pd.read_csv(fp, compression = None)
+    df = pd.read_csv(fp, compression = 'infer')
 
     # Drop rows with missing values for the relevant columns
     plot_df = df.dropna(subset=["flipper_length_mm", "body_mass_g", "species"])
