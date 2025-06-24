@@ -87,7 +87,6 @@ def _(mo):
 def _(mo):
     import pandas as pd
     import matplotlib.pyplot as plt
-    import os
     # Load the penguins dataset
     #fp = str(mo.notebook_location() / "public" / "penguins.csv")
 
