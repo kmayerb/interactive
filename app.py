@@ -75,7 +75,13 @@ def _(mo):
 #         return fig
 
 #     draw()
-
+@app.cell
+def _(mo):
+    import os
+    fp2 = os.path.join(mo.notebook_location(), "public" , "penguins.csv")
+    print(fp2)
+    fp2
+    return fp2
 
 @app.cell
 def _(mo):
