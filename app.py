@@ -91,7 +91,13 @@ def _(mo):
     #fp = str(mo.notebook_location() / "public" / "penguins.csv")
     data_path = mo.notebook_location() / "public" / "penguins.csv"
     #fp = os.path.join(mo.notebook_location(), "public" , "penguins.csv")
-    df = pd.read_csv(str(data_path), compression =  None)
+    #df = pd.read_csv(str(data_path), compression =  None)
+
+    import requests
+    from io import BytesIO
+
+    response = requests.get(data_path)
+    df = pd.read_csv(BytesIO(response.content))
 
     # Drop rows with missing values for the relevant columns
     plot_df = df.dropna(subset=["flipper_length_mm", "body_mass_g", "species"])
