@@ -89,7 +89,7 @@ def _(mo):
     import matplotlib.pyplot as plt
     # Load the penguins dataset
     #fp = str(mo.notebook_location() / "public" / "penguins.csv")
-    data_path = mo.notebook_location() / "public" / "data.csv"
+    data_path = mo.notebook_location() / "public" / "penguins.csv"
     #fp = os.path.join(mo.notebook_location(), "public" , "penguins.csv")
     df = pd.read_csv(str(data_path), compression =  None)
 
